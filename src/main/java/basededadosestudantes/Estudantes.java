@@ -62,7 +62,7 @@ public class Estudantes {
 	
 	// pay tuitton
 	
-	public void pagamentoALuno() {
+	public void pagamentoALuno() throws ValorInvalidoException {
 		//condicaoFinanceira();
 		System.out.println("Insira o valor que será pago: R$");
 		Scanner in = new Scanner(System.in);
@@ -72,7 +72,7 @@ public class Estudantes {
 		System.out.println("Obrigado por pagar o valor dê: R$ "+ pagamento);
 		condicaoFinanceira();
 		}else {
-			System.out.println("Valor Inválido!");
+			throw new ValorInvalidoException("Valor acima do solicitado.");
 		}
 	}
 	// mostrar status
